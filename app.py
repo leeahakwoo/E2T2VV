@@ -6,7 +6,6 @@ from modules import (
     model_eval,
     fairness,
     explainability,
-    robustness,
     report,
 )
 
@@ -16,12 +15,11 @@ PAGES = {
     "3️⃣  Model Eval": model_eval.render,
     "4️⃣  Fairness": fairness.render,
     "5️⃣  Explainability": explainability.render,
-    "6️⃣  Robustness": robustness.render,
-    "7️⃣  Export Report": report.render,
+    "6️⃣  Export Report": report.render,
 }
 
 def main():
-    st.set_page_config(page_title="ETVV + TEVV QA Tool", layout="wide")
+    st.set_page_config(page_title="ETVV + TEVV QA Tool (Light)", layout="wide")
     st.sidebar.title("Navigation")
     choice = st.sidebar.radio("Select module", list(PAGES.keys()))
     PAGES[choice]()

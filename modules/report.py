@@ -1,29 +1,21 @@
-"""Module 4 – Generate Model Card PDF"""
+"""Module 6 – Model Card HTML download"""
 import streamlit as st
 from model_card_toolkit import ModelCard, ModelCardToolkit
 import tempfile
 from pathlib import Path
-import subprocess
 
 def render():
-    st.header("📄 Export Model Card")
-
+    st.header("📄 Export Model Card (HTML)")
     name = st.text_input("Model name", "Demo Model")
     overview = st.text_area("Overview", "This model ...")
 
-    if st.button("Generate & Download PDF"):
+    if st.button("Generate & Download HTML"):
         mct = ModelCardToolkit()
-        mc = ModelCard()
-        mc.model_details.name = name
-        mc.model_details.overview = overview
-
-        tmp = Path(tempfile.mkdtemp())
-        mct.update_model_card(mc)
-        html_path = mct.scaffold_assets() / "model_card.html"
-        pdf_path = tmp / "model_card.pdf"
-        subprocess.run(["weasyprint", str(html_path), str(pdf_path)], check=False)
-
+        card = ModelCard()
+        card.model_details.name = name
+        card.model_details.overview = overview
+        assets_path = mct.scaffold_assets()
+        mct.update_model_card(card)
+        html_file = assets_path / "model_card.html"
         st.success("Model card generated!")
-        st.download_button(
-            label="Download PDF", data=open(pdf_path, "rb"), file_name="model_card.pdf"
-        )
+        st.download_button("Download HTML", data=open(html_file,"rb"), file_name="model_card.html")
