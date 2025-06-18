@@ -1,12 +1,12 @@
 streamlit==1.35.0
-pandas>=2.1
-numpy>=1.26
-scikit-learn>=1.5
-pytest>=8.0
+pandas>=2.3
+numpy>=2.3
+scikit-learn>=1.7
+pytest~=8.4
 pandera==0.18.0
 evidently==0.7.2
-great-expectations==0.18.12
-giskard-client==2.0.1
+great-expectations==0.20.10   # ⬅ 업데이트
+giskard==2.0.2                # ⬅ giskard-client → giskard
 fairlearn==0.10.0
 shap==0.45.0
 model-card-toolkit==0.7.3
