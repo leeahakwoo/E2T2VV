@@ -11,7 +11,7 @@ from modules import (
 
 PAGES = {
     "1️⃣  Data Profile": data_profile.render,
-    "2️⃣  Expectations": expectations.render,
+    # "2️⃣  Expectations": expectations.render,   ← 임시 주석
     "3️⃣  Model Eval": model_eval.render,
     "4️⃣  Fairness": fairness.render,
     "5️⃣  Explainability": explainability.render,
