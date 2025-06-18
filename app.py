@@ -11,11 +11,9 @@ from modules import (
 
 PAGES = {
     "1️⃣  Data Profile": data_profile.render,
-    # "2️⃣  Expectations": expectations.render,   ← 임시 주석
-    "3️⃣  Model Eval": model_eval.render,
-    "4️⃣  Fairness": fairness.render,
-    "5️⃣  Explainability": explainability.render,
-    "6️⃣  Export Report": report.render,
+    "2️⃣  Model Eval": model_eval.render,
+    "3️⃣  Fairness": fairness.render,
+    "4️⃣  Explainability": explainability.render,
 }
 
 def main():
